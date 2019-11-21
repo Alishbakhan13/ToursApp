@@ -49,7 +49,10 @@ module.exports.getbookings = catchAsync(async (req, res, next) => {
     const bookings = await Booking.find({ user: req.user.id });
     //  tours already populated
     const tour = bookings.map(e => e.tour);
-    console.log(tour);
+
+    // if not populated
+    //  get tour ids then Tourmodel({_id:{$in:tourIdsArray}})
+    //console.log(tour);
 
     res.status(200).render('overview', {
         title: 'Natours | Exciting tours for adventurous people',

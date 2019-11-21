@@ -8,7 +8,10 @@ dotenv.config({ path: './config.env' });
 //------------ connection to database-------------------
 
 // getting the connnection address   store in  env variables
-const DB = process.env.DATABASE.replace('<password>', process.env.DATABASE_PASSWORD);
+const DB = process.env.DATABASE_LINK.replace('<password>', process.env.DATABASE_PASSWORD);
+
+// port
+const port = process.env.PORT || 3000;
 
 // setting up the coneection
 mongoose
@@ -24,6 +27,6 @@ mongoose
         console.log('Error  connecting to database :', err);
     });
 
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log('server ready for request..');
 });

@@ -11,7 +11,6 @@ const { createBooking } = require('../controllers/bookingController');
 const { tokenVerfication, loggedInUsser } = require('../controllers/authController');
 
 const router = express.Router();
-console.log('ggg');
 router.get('/account', tokenVerfication, accountSettings);
 router.use(loggedInUsser);
 router.get('/', createBooking, getOverview);

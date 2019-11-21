@@ -198,9 +198,9 @@ module.exports.passwordUpdate = catchAsync(async (req, res, next) => {
 module.exports.updateCurrentUserPassword = catchAsync(async (req, res, next) => {
     // 1) get user from document,  for authentication we use authentication middleware
     const userDoc = await User.findById(req.user._id).select('+password');
-    console.log(userDoc);
+    //(userDoc);
     //2 ) user password is correct
-    console.log(req.body.passwordCurrent);
+    //console.log(req.body.passwordCurrent);
     const condition = userDoc.password === req.body.passwordCurrent;
     if (condition === false) {
         return next(new appErros('password not correct', 404));
