@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon  server",
+        "start": "node  server",
+        "dev": "nodemon  server",
         "start:prod": "NODE_ENV=production nodeomon server.js",
         "debug": "ndb server.js",
         "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js  --out-file bundle.js",
