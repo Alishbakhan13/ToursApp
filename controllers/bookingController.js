@@ -3,7 +3,6 @@ const Tour = require('./../models/tourModel');
 const Booking = require('./../models/bookingModel');
 const catchAsync = require('./../utils/catchAsync');
 const appErros = require('./../utils/appError');
-const User = require('./../models/userModel');
 
 exports.getSession = catchAsync(async (req, res, next) => {
     //   1) get tour from id

@@ -24,7 +24,6 @@ if (loginControl) {
 }
 
 if (logOutBtn) {
-    console.log('hidfdfd');
     logOutBtn.addEventListener('click', logOut);
 }
 

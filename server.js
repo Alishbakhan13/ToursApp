@@ -21,7 +21,7 @@ mongoose
         console.log('database connected');
     })
     .catch(err => {
-        console.log(err);
+        console.log('Error  connecting to database :', err);
     });
 
 app.listen(8080, () => {

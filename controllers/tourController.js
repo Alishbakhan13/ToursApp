@@ -98,7 +98,6 @@ exports.cheapTours = (req, res, next) => {
     req.query.limit = 5;
     req.query.sort = '-ratingsAverage,price';
     req.query.filter = 'name,price,ratingsAverage';
-    console.log('fff');
     next();
 };
 exports.getTours = factory.getAll(tour);
@@ -143,7 +142,7 @@ exports.getStatsTours = catchAsync(async (req, res, next) => {
             $sort: { avgPrice: 1 }
         }
     ]);
-    console.log(tours);
+    //console.log(tours);
     res.status(202).json({
         status: 'success',
         data: { tours }
@@ -197,7 +196,6 @@ exports.nearTours = catchAsync(async (req, res, next) => {
 
     const [lat, lng] = latlng.split(',');
     const radius = unit === 'mi' ? distance / 3963.2 : distance / 6378.1;
-    console.log(lat, lng, distance);
     if (!lat || !lng || !distance)
         return next(new appErros('please enter  longitude or lattitude  or distance', 400));
 

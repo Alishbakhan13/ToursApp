@@ -84,7 +84,7 @@ exports.UpdateUserData = catchAsync(async (req, res, next) => {
         new: true,
         runValidators: true
     });
-    console.log(updateUser);
+    //console.log(updateUser);
     //filter the updating fields only
     res.status(201).json({
         status: 'success',

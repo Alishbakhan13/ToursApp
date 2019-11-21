@@ -93,10 +93,7 @@ tourSchema.pre(/^find/, function(next) {
     this.populate({ path: 'guides', select: '-__v  -passwordChangedAt' });
     next();
 });
-tourSchema.pre('save', function(next) {
-    console.log(this);
-    next();
-});
+
 // for embedding guides in  tour schema
 /*tourSchema.pre('save', async function(next) {
     const guidePromises = this.guides.map(el => User.findById(el));

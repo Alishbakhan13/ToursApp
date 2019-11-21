@@ -4,7 +4,6 @@ const htmlToText = require('html-to-text');
 module.exports = class Email {
     constructor(user, url) {
         this.to = user.email;
-        console.log(user._id);
         this.firstname = user.name.split(' ')[0];
         this.url = url;
         this.from = process.env.EMAIL_FROM;
@@ -33,7 +32,6 @@ module.exports = class Email {
     }
     async send(template, subject) {
         // render the html
-        console.log(`..\views/email/${template}`);
         const html = pug.renderFile(`${__dirname}/../views/email/${template}`, {
             firstname: this.firstname,
             url: this.url,
